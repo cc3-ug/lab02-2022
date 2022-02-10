@@ -1,4 +1,5 @@
 cp grading/Makefile .
+cp grading/*.expected .
 
 {
   title() {

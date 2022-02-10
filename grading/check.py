@@ -249,6 +249,7 @@ def lab2_c_mm():
         grade = round(grade)
         grade = min(grade, 100)
         report = utils.report(table)
+        print(report)
         if errors != '':
             report += '\n\nMore Info:\n\n' + errors
         return utils.write_result(grade, report)
