@@ -101,10 +101,13 @@ def check_ex1():
         if task.returncode != 0:
             return (0, utils.failed('runtime error'), task.stderr.decode().strip())
         # Output
-        output = task.stdout.decode().strip()
-        expected = 'OK\nOK\nOK\nOK\nOK\nOK\nOK\nOK\nOK\nOK\nOK\nOK\nOK\nOK\nOK\nOK\nOK\nOK\nOK'
+        output = task.stdout.decode().strip().split('\n')
+
+        f = open('ex1.expected', 'r')
+        expected = f.read().strip()
         expected = expected.split('\n')
-        output = output.split('\n')
+        f.close()
+
         grade = 0
         wrong = 0
         for (exp, out) in zip(expected, output):
