@@ -3,6 +3,7 @@ bit_ops
 lfsr
 vector
 .autograder
+grading/__pycache__/
 
 # Prerequisites
 *.d
